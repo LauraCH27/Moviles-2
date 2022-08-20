@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="etplaca" type="id" />
+    <item name="etmarca" type="id" />
+    <item name="etmodelo" type="id" />
+    <item name="etvalor" type="id" />
+    <item name="cbactivo" type="id" />
+    <item name="btguardar" type="id" />
+    <item name="btconsultar" type="id" />
+    <item name="btanular" type="id" />
+    <item name="btcancelar" type="id" />
+    <item name="btregresar" type="id" />
+</resources>
