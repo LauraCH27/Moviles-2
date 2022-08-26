@@ -66,7 +66,13 @@ public class VehiculoActivity extends AppCompatActivity {
             SQLiteDatabase db=admin.getReadableDatabase();
             Cursor fila= db.rawQuery("select * from TblLVehiculo where placa='"+placa+"'",null);
             if(fila.moveToNext()){
-
+                jetmarca.setText(fila.getString(1));
+                jetmodelo.setText(fila.getString(2));
+                jetvalor.setText(fila.getString(3));
+                if(fila.getString(4).equals("si"))
+                  jcbactivo.setChecked(true);
+                else
+                    jcbactivo.setChecked(false);
             }
             else Toast.makeText(this,"Vehiculo no registrado",Toast.LENGTH_SHORT).show();
             db.close();
