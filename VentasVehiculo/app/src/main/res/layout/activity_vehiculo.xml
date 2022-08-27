@@ -96,6 +96,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="300dp"
         android:checked="false"
+        android:enabled="false"
         android:textSize="20dp"
         android:layout_height="wrap_content"
         android:text="  Activo" />
@@ -111,39 +112,43 @@
         android:textSize="18dp" />
 
     <Button
-        android:layout_marginTop="5dp"
         android:id="@+id/btconsultar"
-        android:layout_height="wrap_content"
         android:layout_width="200dp"
-        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:onClick="Consultar"
         android:text="Consultar"
-        android:layout_gravity="center_horizontal"/>
+        android:textSize="20dp" />
 
     <Button
         android:layout_marginTop="5dp"
         android:id="@+id/btanular"
         android:layout_height="wrap_content"
         android:layout_width="200dp"
+        android:onClick="Anular"
         android:textSize="18dp"
         android:text="Anular"
         android:layout_gravity="center_horizontal"/>
 
     <Button
-        android:layout_marginTop="5dp"
         android:id="@+id/btcancelar"
-        android:layout_height="wrap_content"
         android:layout_width="200dp"
-        android:textSize="18dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:onClick="Cancelar"
         android:text="Cancelar"
-        android:layout_gravity="center_horizontal"/>
+        android:textSize="18dp" />
 
     <Button
-        android:layout_marginTop="5dp"
         android:id="@+id/btregresar"
-        android:layout_height="wrap_content"
         android:layout_width="200dp"
-        android:textSize="18dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:onClick="Regresar"
         android:text="Regresar"
-        android:layout_gravity="center_horizontal"/>
+        android:textSize="18dp" />
 
 </LinearLayout>
