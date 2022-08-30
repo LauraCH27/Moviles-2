@@ -22,11 +22,11 @@ public class FacturaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_factura);
-        jetplaca=findViewById(R.id.etplaca);
-        jetmarca=findViewById(R.id.etmarca);
-        jetmodelo=findViewById(R.id.etmodelo);
-        jetvalor=findViewById(R.id.etvalor);
-        jcbactivo=findViewById(R.id.cbactivo);
+        jetplaca=findViewById(R.id.etplacas);
+        jetmarca=findViewById(R.id.etmarcas);
+        jetmodelo=findViewById(R.id.etmodelos);
+        jetvalor=findViewById(R.id.etvalores);
+        jcbactivo=findViewById(R.id.etactivo);
         //jetcod_factura=findViewById(R.id.etcodfactura);
         jetfecha=findViewById(R.id.etfecha);
     }

@@ -38,8 +38,8 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="94dp"
+                android:layout_width="match_parent"
+                android:layout_height="99dp"
                 android:layout_marginHorizontal="40dp"
                 app:srcCompat="@drawable/ic_facture" />
 
@@ -74,7 +74,7 @@
                     android:textAlignment="center" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName2"
+                    android:id="@+id/etfecha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -88,10 +88,11 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName13"
+                        android:id="@+id/etplacas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -120,8 +121,7 @@
 
                 <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="5dp">
+                    android:layout_height="match_parent">
 
                     <TableRow
                         android:layout_width="308dp"
@@ -132,7 +132,7 @@
                         android:textAlignment="center">
 
                         <EditText
-                            android:id="@+id/editTextTextPersonName7"
+                            android:id="@+id/etmarcas"
                             android:layout_width="138dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -144,7 +144,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
-                            android:id="@+id/editTextNumber5"
+                            android:id="@+id/etmodelos"
                             android:layout_width="128dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -156,7 +156,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
-                            android:id="@+id/editTextNumber6"
+                            android:id="@+id/etvalores"
                             android:layout_width="129dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -182,7 +182,7 @@
                 </TableLayout>
 
                 <CheckBox
-                    android:id="@+id/cbactivo"
+                    android:id="@+id/etactivo"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
