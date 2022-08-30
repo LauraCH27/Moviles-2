@@ -110,7 +110,7 @@
                     android:textSize="18dp" />
 
                 <CheckBox
-                    android:id="@+id/etactivo"
+                    android:id="@+id/fcactivo"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"

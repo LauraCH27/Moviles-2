@@ -92,7 +92,7 @@
                     android:layout_marginTop="10dp">
 
                     <EditText
-                        android:id="@+id/etplacas"
+                        android:id="@+id/fcplacas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -132,7 +132,7 @@
                         android:textAlignment="center">
 
                         <EditText
-                            android:id="@+id/etmarcas"
+                            android:id="@+id/fcmarcas"
                             android:layout_width="138dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -144,7 +144,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
-                            android:id="@+id/etmodelos"
+                            android:id="@+id/fcmodelos"
                             android:layout_width="128dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -156,7 +156,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
-                            android:id="@+id/etvalores"
+                            android:id="@+id/fcvalores"
                             android:layout_width="129dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -182,7 +182,7 @@
                 </TableLayout>
 
                 <CheckBox
-                    android:id="@+id/etactivo"
+                    android:id="@+id/fcactivo"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
