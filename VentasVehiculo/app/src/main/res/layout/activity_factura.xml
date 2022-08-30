@@ -61,7 +61,7 @@
                     android:textSize="24sp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/etcodfactura"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -74,7 +74,7 @@
                     android:textAlignment="center" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName2"
+                    android:id="@+id/etfecha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -82,7 +82,7 @@
                     android:layout_marginRight="10dp"
                     android:ems="10"
                     android:hint="FECHA"
-                    android:inputType="textPersonName"
+                    android:inputType="datetime"
                     android:minHeight="48dp"
                     android:textAlignment="center" />
 
@@ -91,7 +91,7 @@
                     android:layout_height="match_parent">
 
                     <EditText
-                        android:id="@+id/editTextTextPersonName13"
+                        android:id="@+id/etplaca"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -109,6 +109,7 @@
                         android:layout_marginLeft="240dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
+                        android:onClick="Buscar"
                         android:scrollbarAlwaysDrawHorizontalTrack="false"
                         android:scrollbarAlwaysDrawVerticalTrack="false"
                         android:text="BUSCAR"
@@ -132,7 +133,7 @@
                         android:textAlignment="center">
 
                         <EditText
-                            android:id="@+id/editTextTextPersonName7"
+                            android:id="@+id/etmarca"
                             android:layout_width="138dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -144,7 +145,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
-                            android:id="@+id/editTextNumber5"
+                            android:id="@+id/etmodelo"
                             android:layout_width="128dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -156,7 +157,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
-                            android:id="@+id/editTextNumber6"
+                            android:id="@+id/etvalor"
                             android:layout_width="129dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -212,6 +213,7 @@
                             android:layout_height="match_parent"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
+                            android:onClick="Guardarfac"
                             android:text="GUARDAR"
                             android:textSize="16sp"
                             app:cornerRadius="15dp" />
@@ -221,6 +223,7 @@
                             android:layout_width="194dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:onClick="Consultarfac"
                             android:text="CONSULTAR"
                             android:textSize="16sp"
                             app:cornerRadius="15dp" />
@@ -266,6 +269,7 @@
                             android:layout_marginRight="50dp"
                             android:layout_span="2"
                             android:baselineAligned="false"
+                            android:onClick="Regresar"
                             android:text="REGRESAR"
                             android:textSize="16sp"
                             app:cornerRadius="15dp" />
