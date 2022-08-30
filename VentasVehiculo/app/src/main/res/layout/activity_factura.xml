@@ -92,7 +92,10 @@
                     android:layout_marginTop="10dp">
 
                     <EditText
-<<<<<<< HEAD
+
+                    <
+
+                    <<<<<< HEAD
                         android:id="@+id/etplaca"
 =======
                         android:id="@+id/etplacas"
