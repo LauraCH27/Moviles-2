@@ -61,7 +61,7 @@
                     android:textSize="24sp" />
 
                 <EditText
-                    android:id="@+id/etcodfactura"
+                    android:id="@+id/editTextTextPersonName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -82,7 +82,7 @@
                     android:layout_marginRight="10dp"
                     android:ems="10"
                     android:hint="FECHA"
-                    android:inputType="datetime"
+                    android:inputType="textPersonName"
                     android:minHeight="48dp"
                     android:textAlignment="center" />
 
@@ -92,18 +92,7 @@
                     android:layout_marginTop="10dp">
 
                     <EditText
-<<<<<<< HEAD
-
-                    <
-
-                    <<<<<< HEAD
-                        android:id="@+id/etplaca"
-=======
-                        android:id="@+id/etplacas"
->>>>>>> 3ea9be27c34de15d07b5c1d0d1b6f734e563e425
-=======
                         android:id="@+id/fcplacas"
->>>>>>> richar
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -121,7 +110,6 @@
                         android:layout_marginLeft="240dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
-                        android:onClick="Buscar"
                         android:scrollbarAlwaysDrawHorizontalTrack="false"
                         android:scrollbarAlwaysDrawVerticalTrack="false"
                         android:text="BUSCAR"
@@ -144,15 +132,7 @@
                         android:textAlignment="center">
 
                         <EditText
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            android:id="@+id/etmarca"
-=======
-                            android:id="@+id/etmarcas"
->>>>>>> 3ea9be27c34de15d07b5c1d0d1b6f734e563e425
-=======
                             android:id="@+id/fcmarcas"
->>>>>>> richar
                             android:layout_width="138dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -164,15 +144,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            android:id="@+id/etmodelo"
-=======
-                            android:id="@+id/etmodelos"
->>>>>>> 3ea9be27c34de15d07b5c1d0d1b6f734e563e425
-=======
                             android:id="@+id/fcmodelos"
->>>>>>> richar
                             android:layout_width="128dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -184,15 +156,7 @@
                             tools:ignore="TouchTargetSizeCheck" />
 
                         <EditText
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            android:id="@+id/etvalor"
-=======
-                            android:id="@+id/etvalores"
->>>>>>> 3ea9be27c34de15d07b5c1d0d1b6f734e563e425
-=======
                             android:id="@+id/fcvalores"
->>>>>>> richar
                             android:layout_width="129dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -248,7 +212,6 @@
                             android:layout_height="match_parent"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
-                            android:onClick="Guardarfac"
                             android:text="GUARDAR"
                             android:textSize="16sp"
                             app:cornerRadius="15dp" />
@@ -258,7 +221,6 @@
                             android:layout_width="194dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:onClick="Consultarfac"
                             android:text="CONSULTAR"
                             android:textSize="16sp"
                             app:cornerRadius="15dp" />
@@ -304,7 +266,6 @@
                             android:layout_marginRight="50dp"
                             android:layout_span="2"
                             android:baselineAligned="false"
-                            android:onClick="Regresar"
                             android:text="REGRESAR"
                             android:textSize="16sp"
                             app:cornerRadius="15dp" />
