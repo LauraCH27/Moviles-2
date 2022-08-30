@@ -15,11 +15,11 @@ import android.widget.Toast;
 public class FacturaActivity extends AppCompatActivity {
 
 
-    EditText jetplaca,jetmarca,jetmodelo,jetvalor,jetcod_factura,jetfecha;
+    EditText jetplaca,jetmarca,jetmodelo,jetvalor,jetcod_factura,jetfecha,jetestado;
     CheckBox jcbactivo;
     ClsOpenHelper admin=new ClsOpenHelper(this,"Concesionario.db",null,1);
-    String placa,marca,modelo,valor,cod_factura,fecha;
-    long resp;
+    String placa,marca,modelo,valor,cod_factura,fecha,estado;
+    long resp,register;
     int sw;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +31,9 @@ public class FacturaActivity extends AppCompatActivity {
         jetmodelo=findViewById(R.id.fcmodelos);
         jetvalor=findViewById(R.id.fcvalores);
         jcbactivo=findViewById(R.id.fcactivo);
-        //jetcod_factura=findViewById(R.id.etcodfactura);
+        jetcod_factura=findViewById(R.id.etcodfactura);
         jetfecha=findViewById(R.id.etfecha);
+        jetestado=findViewById(R.id.estado);
         sw=0;
     }
     public void Buscar(View view){
@@ -63,7 +64,7 @@ public class FacturaActivity extends AppCompatActivity {
         cod_factura=jetcod_factura.getText().toString();
         fecha=jetfecha.getText().toString();
         placa=jetplaca.getText().toString();
-        marca=jetmarca.getText().toString();
+       marca=jetmarca.getText().toString();
         modelo =jetmodelo.getText().toString();
         valor=jetvalor.getText().toString();
         if (placa.isEmpty()||marca.isEmpty()||modelo.isEmpty()||valor.isEmpty()||fecha.isEmpty()||cod_factura.isEmpty()){
@@ -73,20 +74,21 @@ public class FacturaActivity extends AppCompatActivity {
         else {
             SQLiteDatabase db=admin.getWritableDatabase();
             ContentValues registro=new ContentValues();
-            /*registro.put("marca",marca);
-            registro.put("modelo",modelo);
-            registro.put("valor", Integer.parseInt(valor));*/
             registro.put("cod_factura",cod_factura);
             registro.put("fecha",fecha);
             registro.put("placa",placa);
+            registro.put("activo","no");
             //if(sw==0) {
             resp = db.insert("TBLFactura", null, registro);
             /*}
             else {
                 resp = db.update("TblLVehiculo", registro, "placa='" + placa + "'", null);
             }*/
+
             if (resp>0){
-                Toast.makeText(this,"Registro guardado",Toast.LENGTH_SHORT).show();
+                registro.put("activo","no");
+                register=db.update("TblLVehiculo",registro,"placa='"+ placa + "'",null);
+                Toast.makeText(this,"Factura guardada",Toast.LENGTH_SHORT).show();
                 Limpiar_campos();
             }
             else Toast.makeText(this,"Error en registro",Toast.LENGTH_SHORT).show();
@@ -104,9 +106,10 @@ public class FacturaActivity extends AppCompatActivity {
             SQLiteDatabase db=admin.getReadableDatabase();
             Cursor fila= db.rawQuery("select * from TBLFactura where cod_factura='"+cod_factura+"'",null);
             if(fila.moveToNext()) {
-                sw = 1;
+                sw = 2;
                 jetfecha.setText(fila.getString(1));
                 jetplaca.setText(fila.getString(2));
+                jetestado.setText(fila.getString(3));
             }
             else Toast.makeText(this,"Vehiculo no registrado",Toast.LENGTH_SHORT).show();
             db.close();
@@ -121,6 +124,28 @@ public class FacturaActivity extends AppCompatActivity {
         Intent intmain= new Intent(this,MainActivity.class);
         startActivity(intmain);
     }
+    public void AnularFv(View view){
+        if(placa.isEmpty()||marca.isEmpty()||modelo.isEmpty()||valor.isEmpty()||fecha.isEmpty()||cod_factura.isEmpty()){
+            Toast.makeText(this, "Primero debe consultar la factura", Toast.LENGTH_SHORT).show();
+            jetplaca.requestFocus();
+        }
+        else{
+            SQLiteDatabase db=admin.getWritableDatabase();
+            ContentValues registro=new ContentValues();
+            registro.put("estado","ANULADA");
+            resp=db.update("TBLFactura",registro,"cod_factura='"+ cod_factura + "'",null);
+            registro.put("activo","si");
+            resp=db.update("TblLVehiculo",registro,"placa='"+ placa + "'",null);
+            if (resp>0){
+                Toast.makeText(this, "factura anulada", Toast.LENGTH_SHORT).show();
+                Limpiar_campos();
+            }
+            else
+                Toast.makeText(this, "Registro anulado", Toast.LENGTH_SHORT).show();
+            Limpiar_campos();
+        }
+    }
+
 
     private void Limpiar_campos(){
         jetplaca.setText("");
