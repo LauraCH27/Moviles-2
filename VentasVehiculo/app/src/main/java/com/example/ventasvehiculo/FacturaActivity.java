@@ -15,10 +15,10 @@ import android.widget.Toast;
 public class FacturaActivity extends AppCompatActivity {
 
 
-    EditText jetplaca,jetmarca,jetmodelo,jetvalor,jetcod_factura,jetfecha,jetestado;
-    CheckBox jcbactivo;
+    EditText jetplaca,jetmarca,jetmodelo,jetvalor,jetcod_factura,jetfecha;
+    CheckBox jcbactivo,jcbfcactivo;
     ClsOpenHelper admin=new ClsOpenHelper(this,"Concesionario.db",null,1);
-    String placa,marca,modelo,valor,cod_factura,fecha,estado;
+    String placa,marca,modelo,valor,cod_factura,fecha;
     long resp,register;
     int sw;
     @Override
@@ -30,10 +30,10 @@ public class FacturaActivity extends AppCompatActivity {
         jetmarca=findViewById(R.id.fcmarcas);
         jetmodelo=findViewById(R.id.fcmodelos);
         jetvalor=findViewById(R.id.fcvalores);
-        jcbactivo=findViewById(R.id.fcactivo);
+        jcbactivo=findViewById(R.id.activo);
         jetcod_factura=findViewById(R.id.etcodfactura);
         jetfecha=findViewById(R.id.etfecha);
-        jetestado=findViewById(R.id.estado);
+        jcbfcactivo=findViewById(R.id.fcactivo);
         sw=0;
     }
     public void Buscar(View view){
@@ -45,8 +45,8 @@ public class FacturaActivity extends AppCompatActivity {
         else{
             SQLiteDatabase db=admin.getReadableDatabase();
             Cursor fila= db.rawQuery("select * from TblLVehiculo where placa='"+placa+"'",null);
-            if(fila.moveToNext()){
-                sw=1;
+            if(fila.moveToNext()) {
+                sw = 1;
                 jetmarca.setText(fila.getString(1));
                 jetmodelo.setText(fila.getString(2));
                 jetvalor.setText(fila.getString(3));
@@ -64,7 +64,7 @@ public class FacturaActivity extends AppCompatActivity {
         cod_factura=jetcod_factura.getText().toString();
         fecha=jetfecha.getText().toString();
         placa=jetplaca.getText().toString();
-       marca=jetmarca.getText().toString();
+        marca=jetmarca.getText().toString();
         modelo =jetmodelo.getText().toString();
         valor=jetvalor.getText().toString();
         if (placa.isEmpty()||marca.isEmpty()||modelo.isEmpty()||valor.isEmpty()||fecha.isEmpty()||cod_factura.isEmpty()){
@@ -77,16 +77,11 @@ public class FacturaActivity extends AppCompatActivity {
             registro.put("cod_factura",cod_factura);
             registro.put("fecha",fecha);
             registro.put("placa",placa);
-            registro.put("activo","no");
-            //if(sw==0) {
+            //registro.put("factivo","si");
             resp = db.insert("TBLFactura", null, registro);
-            /*}
-            else {
-                resp = db.update("TblLVehiculo", registro, "placa='" + placa + "'", null);
-            }*/
-
             if (resp>0){
-                registro.put("activo","no");
+                /*ContentValues registr=new ContentValues();
+                registr.put("activo","no");*/
                 register=db.update("TblLVehiculo",registro,"placa='"+ placa + "'",null);
                 Toast.makeText(this,"Factura guardada",Toast.LENGTH_SHORT).show();
                 Limpiar_campos();
@@ -106,12 +101,15 @@ public class FacturaActivity extends AppCompatActivity {
             SQLiteDatabase db=admin.getReadableDatabase();
             Cursor fila= db.rawQuery("select * from TBLFactura where cod_factura='"+cod_factura+"'",null);
             if(fila.moveToNext()) {
-                sw = 2;
+                sw = 1;
                 jetfecha.setText(fila.getString(1));
                 jetplaca.setText(fila.getString(2));
-                jetestado.setText(fila.getString(3));
+                if(fila.getString(3).equals("si")){
+                    jcbfcactivo.setChecked(true);}
+                else{
+                    jcbfcactivo.setChecked(false);}
             }
-            else Toast.makeText(this,"Vehiculo no registrado",Toast.LENGTH_SHORT).show();
+            else Toast.makeText(this,"Factura no registrada",Toast.LENGTH_SHORT).show();
             db.close();
         }
     }
@@ -125,17 +123,15 @@ public class FacturaActivity extends AppCompatActivity {
         startActivity(intmain);
     }
     public void AnularFv(View view){
-        if(placa.isEmpty()||marca.isEmpty()||modelo.isEmpty()||valor.isEmpty()||fecha.isEmpty()||cod_factura.isEmpty()){
+        if(sw==0){
             Toast.makeText(this, "Primero debe consultar la factura", Toast.LENGTH_SHORT).show();
             jetplaca.requestFocus();
         }
         else{
             SQLiteDatabase db=admin.getWritableDatabase();
             ContentValues registro=new ContentValues();
-            registro.put("estado","ANULADA");
+            registro.put("factivo","no");
             resp=db.update("TBLFactura",registro,"cod_factura='"+ cod_factura + "'",null);
-            registro.put("activo","si");
-            resp=db.update("TblLVehiculo",registro,"placa='"+ placa + "'",null);
             if (resp>0){
                 Toast.makeText(this, "factura anulada", Toast.LENGTH_SHORT).show();
                 Limpiar_campos();
@@ -156,6 +152,7 @@ public class FacturaActivity extends AppCompatActivity {
         jetplaca.requestFocus();
         jetcod_factura.setText("");
         jetfecha.setText("");
+        jcbfcactivo.setChecked(false);
         sw=0;
     }
 }

@@ -31,7 +31,7 @@ public class VehiculoActivity extends AppCompatActivity {
         jetmarca=findViewById(R.id.etmarca);
         jetmodelo=findViewById(R.id.etmodelo);
         jetvalor=findViewById(R.id.etvalor);
-        jcbactivo=findViewById(R.id.fcactivo);
+        jcbactivo=findViewById(R.id.activo);
         sw=0;
     }
     public void Guardar(View view){

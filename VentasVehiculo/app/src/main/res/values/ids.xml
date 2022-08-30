@@ -4,7 +4,7 @@
     <item name="etmarca" type="id" />
     <item name="etmodelo" type="id" />
     <item name="etvalor" type="id" />
-    <item name="fcactivo" type="id" />
+    <item name="activo" type="id" />
     <item name="btguardar" type="id" />
     <item name="btconsultar" type="id" />
     <item name="btanular" type="id" />

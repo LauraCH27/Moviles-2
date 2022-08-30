@@ -18,7 +18,7 @@ public class ClsOpenHelper extends SQLiteOpenHelper {
                 "activo text not null default'si' )");
 
         sqLiteDatabase.execSQL("create table TBLFactura(cod_factura AUTO_INCREMENT primary key," +
-                "fecha text not null,placa text not null,activo text not  null default 'si',estado text not null default'HABILITADA'," +
+                "fecha text not null,placa text not null,factivo text not  null default 'si'," +
                 "constraint pk_factura foreign key(placa) references TblVehiculos(placa))") ;
     }
 
