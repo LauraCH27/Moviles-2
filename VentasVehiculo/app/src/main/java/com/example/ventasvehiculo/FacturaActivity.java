@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 public class FacturaActivity extends AppCompatActivity {
 
+
     EditText jetplaca,jetmarca,jetmodelo,jetvalor,jetcod_factura,jetfecha;
     CheckBox jcbactivo;
     ClsOpenHelper admin=new ClsOpenHelper(this,"Concesionario.db",null,1);
@@ -25,11 +26,19 @@ public class FacturaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_factura);
 
+<<<<<<< HEAD
         jetplaca=findViewById(R.id.etplacas);
         jetmarca=findViewById(R.id.etmarcas);
         jetmodelo=findViewById(R.id.etmodelos);
         jetvalor=findViewById(R.id.etvalores);
         jcbactivo=findViewById(R.id.etactivo);
+=======
+        jetplaca=findViewById(R.id.fcplacas);
+        jetmarca=findViewById(R.id.fcmarcas);
+        jetmodelo=findViewById(R.id.fcmodelos);
+        jetvalor=findViewById(R.id.fcvalores);
+        jcbactivo=findViewById(R.id.fcactivo);
+>>>>>>> richar
         //jetcod_factura=findViewById(R.id.etcodfactura);
         jetfecha=findViewById(R.id.etfecha);
         sw=0;
@@ -42,7 +51,11 @@ public class FacturaActivity extends AppCompatActivity {
         }
         else{
             SQLiteDatabase db=admin.getReadableDatabase();
+<<<<<<< HEAD
                 Cursor fila= db.rawQuery("select * from TblLVehiculo where placa='"+placa+"'",null);
+=======
+            Cursor fila= db.rawQuery("select * from TblLVehiculo where placa='"+placa+"'",null);
+>>>>>>> richar
             if(fila.moveToNext()){
                 sw=1;
                 jetmarca.setText(fila.getString(1));
@@ -79,7 +92,11 @@ public class FacturaActivity extends AppCompatActivity {
             registro.put("fecha",fecha);
             registro.put("placa",placa);
             //if(sw==0) {
+<<<<<<< HEAD
                 resp = db.insert("TBLFactura", null, registro);
+=======
+            resp = db.insert("TBLFactura", null, registro);
+>>>>>>> richar
             /*}
             else {
                 resp = db.update("TblLVehiculo", registro, "placa='" + placa + "'", null);

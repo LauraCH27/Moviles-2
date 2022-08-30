@@ -92,6 +92,7 @@
                     android:layout_marginTop="10dp">
 
                     <EditText
+<<<<<<< HEAD
 
                     <
 
@@ -100,6 +101,9 @@
 =======
                         android:id="@+id/etplacas"
 >>>>>>> 3ea9be27c34de15d07b5c1d0d1b6f734e563e425
+=======
+                        android:id="@+id/fcplacas"
+>>>>>>> richar
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -141,10 +145,14 @@
 
                         <EditText
 <<<<<<< HEAD
+<<<<<<< HEAD
                             android:id="@+id/etmarca"
 =======
                             android:id="@+id/etmarcas"
 >>>>>>> 3ea9be27c34de15d07b5c1d0d1b6f734e563e425
+=======
+                            android:id="@+id/fcmarcas"
+>>>>>>> richar
                             android:layout_width="138dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -157,10 +165,14 @@
 
                         <EditText
 <<<<<<< HEAD
+<<<<<<< HEAD
                             android:id="@+id/etmodelo"
 =======
                             android:id="@+id/etmodelos"
 >>>>>>> 3ea9be27c34de15d07b5c1d0d1b6f734e563e425
+=======
+                            android:id="@+id/fcmodelos"
+>>>>>>> richar
                             android:layout_width="128dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -173,10 +185,14 @@
 
                         <EditText
 <<<<<<< HEAD
+<<<<<<< HEAD
                             android:id="@+id/etvalor"
 =======
                             android:id="@+id/etvalores"
 >>>>>>> 3ea9be27c34de15d07b5c1d0d1b6f734e563e425
+=======
+                            android:id="@+id/fcvalores"
+>>>>>>> richar
                             android:layout_width="129dp"
                             android:layout_height="wrap_content"
                             android:background="#FFEB3B"
@@ -202,7 +218,7 @@
                 </TableLayout>
 
                 <CheckBox
-                    android:id="@+id/etactivo"
+                    android:id="@+id/fcactivo"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
