@@ -85,6 +85,7 @@ public class VehiculoActivity extends AppCompatActivity {
             }
             else Toast.makeText(this,"Vehiculo no registrado",Toast.LENGTH_SHORT).show();
             db.close();
+            Limpiar_campos();
         }
     }
     public void Anular(View view){

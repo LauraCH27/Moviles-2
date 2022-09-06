@@ -120,13 +120,13 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btanular"
+                    android:id="@+id/btguardar"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    android:onClick="Anular"
-                    android:text="Anular"
+                    android:layout_marginTop="10dp"
+                    android:onClick="Guardar"
+                    android:text="Guardar"
                     android:textSize="18dp" />
 
                 <Button
@@ -140,13 +140,13 @@
                     android:textSize="20dp" />
 
                 <Button
-                    android:id="@+id/btguardar"
+                    android:id="@+id/btanular"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:onClick="Guardar"
-                    android:text="Guardar"
+                    android:layout_marginTop="5dp"
+                    android:onClick="Anular"
+                    android:text="Anular"
                     android:textSize="18dp" />
 
                 <Button
