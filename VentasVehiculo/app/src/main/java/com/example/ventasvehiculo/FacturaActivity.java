@@ -79,15 +79,19 @@ public class FacturaActivity extends AppCompatActivity {
             registro.put("placa",placa);
             //registro.put("factivo","si");
             resp = db.insert("TBLFactura", null, registro);
+            db.close();
+
             if (resp>0){
-                /*ContentValues registr=new ContentValues();
-                registr.put("activo","no");*/
+                SQLiteDatabase db1=admin.getWritableDatabase();
+                ContentValues registr=new ContentValues();
+                registr.put("activo","no");
                 register=db.update("TblLVehiculo",registro,"placa='"+ placa + "'",null);
                 Toast.makeText(this,"Factura guardada",Toast.LENGTH_SHORT).show();
                 Limpiar_campos();
+                db1.close();
             }
             else Toast.makeText(this,"Error en registro",Toast.LENGTH_SHORT).show();
-            db.close();
+
         }
     }
 
