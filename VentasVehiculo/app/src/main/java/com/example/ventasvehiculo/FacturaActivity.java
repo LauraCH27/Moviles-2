@@ -81,8 +81,8 @@ public class FacturaActivity extends AppCompatActivity {
             resp = db.insert("TBLFactura", null, registro);
             if (resp>0){
                 /*ContentValues registr=new ContentValues();
-                registr.put("activo","no");*/
-                register=db.update("TblLVehiculo",registro,"placa='"+ placa + "'",null);
+                registr.put("activo","no");
+                register=db.update("TblLVehiculo",registro,"placa='"+ placa + "'",null);*/
                 Toast.makeText(this,"Factura guardada",Toast.LENGTH_SHORT).show();
                 Limpiar_campos();
             }

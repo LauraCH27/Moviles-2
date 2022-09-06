@@ -29,7 +29,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:background="#03A9F4"
                 android:text="Bienvenido"
                 android:textAlignment="center"
@@ -99,7 +99,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="8dp">
 
                     <EditText
                         android:id="@+id/fcplacas"
