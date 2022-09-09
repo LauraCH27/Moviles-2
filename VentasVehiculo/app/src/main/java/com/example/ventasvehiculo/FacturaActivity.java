@@ -54,6 +54,22 @@ public class FacturaActivity extends AppCompatActivity {
                     jcbactivo.setChecked(true);
                 else
                     jcbactivo.setChecked(false);
+                db.close();
+                SQLiteDatabase db1=admin.getWritableDatabase();
+                Cursor fila2= db1.rawQuery("select * from TBLFactura where placa='"+placa+"'",null);
+                if (fila2.moveToNext()){
+                    jetcod_factura.setText(fila2.getString(0));
+                    jetfecha.setText(fila2.getString(1));
+                    if (fila2.getString(3).equals("si")){
+                        jcbfcactivo.setChecked(true);}
+                    else{
+                        jcbfcactivo.setChecked(false);
+                    }
+                    db1.close();
+                }
+                else{
+                    Toast.makeText(this,"Vehiculo sin factura",Toast.LENGTH_SHORT).show();
+                }
             }
             else Toast.makeText(this,"Vehiculo no registrado",Toast.LENGTH_SHORT).show();
             db.close();
@@ -138,12 +154,20 @@ public class FacturaActivity extends AppCompatActivity {
             registro.put("factivo","no");
             resp=db.update("TBLFactura",registro,"cod_factura='"+ cod_factura + "'",null);
             if (resp>0){
+                db.close();
+                SQLiteDatabase db1=admin.getWritableDatabase();
+                ContentValues regist=new ContentValues();
+                regist.put("activo","si");
+                register=db1.update("TblLVehiculo",regist,"placa='" +placa+"'",null);
+                db1.close();
                 Toast.makeText(this, "factura anulada", Toast.LENGTH_SHORT).show();
                 Limpiar_campos();
             }
-            else
+
+            else {
                 Toast.makeText(this, "Registro anulado", Toast.LENGTH_SHORT).show();
-            Limpiar_campos();
+                Limpiar_campos();
+            }
         }
     }
 
