@@ -29,19 +29,19 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="#03A9F4"
-                android:text="Bienvenido"
+                android:background="@color/primary_Dark"
+                android:fontFamily="sans-serif-medium"
+                android:text="FACTURA"
                 android:textAlignment="center"
-                android:textColor="#1E1D1D"
-                android:textSize="34sp" />
+                android:textColor="#F5F5F5"
+                android:textSize="28sp" />
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
-                android:layout_height="99dp"
-                android:layout_marginHorizontal="40dp"
-                app:srcCompat="@drawable/ic_facture" />
+                android:layout_height="128dp"
+                android:background="@color/primary_light"
+                app:srcCompat="@drawable/ic_fac" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -49,57 +49,56 @@
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="FACTURA"
-                    android:textAlignment="center"
-                    android:textColor="#0E0E0E"
-                    android:textSize="24sp" />
-
                 <EditText
                     android:id="@+id/etcodfactura"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
+                    android:background="@color/primary_Dark"
+                    android:backgroundTint="@color/primary_light"
                     android:ems="10"
                     android:hint="CÓDIGO DE FACTURA"
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="#DFDADA"
+                    android:textColorHint="#DFDADA" />
 
                 <EditText
                     android:id="@+id/etfecha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
+                    android:background="@color/primary_Dark"
+                    android:backgroundTint="@color/primary_light"
                     android:ems="10"
                     android:hint="FECHA"
                     android:inputType="datetime"
                     android:minHeight="48dp"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="#DFDADA"
+                    android:textColorHint="#DFDADA" />
 
                 <CheckBox
                     android:id="@+id/fcactivo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="10dp"
                     android:checked="false"
                     android:enabled="false"
                     android:text="  Factura activa"
+                    android:textColor="#DFDADA"
                     android:textSize="20dp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="8dp">
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20sp">
 
                     <EditText
                         android:id="@+id/fcplacas"
@@ -107,26 +106,37 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/primary_Dark"
+                        android:backgroundTint="@color/primary_light"
                         android:ems="10"
-                        android:hint="PLACA = pe AAA-123"
+                        android:hint="PLACA AAA-123"
                         android:inputType="textPersonName"
-                        android:minHeight="48dp" />
+                        android:minHeight="48dp"
+                        android:textAlignment="center"
+                        android:textColor="#DFDADA"
+                        android:textColorHint="#DFDADA" />
 
                     <Button
                         android:id="@+id/btnbuscar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="240dp"
+                        android:layout_marginLeft="230dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
+                        android:backgroundTint="@color/Botones"
+                        android:fontFamily="sans-serif-medium"
                         android:onClick="Buscar"
                         android:scrollbarAlwaysDrawHorizontalTrack="false"
                         android:scrollbarAlwaysDrawVerticalTrack="false"
                         android:text="BUSCAR"
                         android:textAlignment="center"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
+                        android:textColor="#DFDADA"
+                        android:textColorHint="#DFDADA"
+                        android:textSize="18sp"
+                        app:cornerRadius="15dp"
                         app:strokeColor="#201E1E" />
 
                 </RelativeLayout>
@@ -140,36 +150,51 @@
                         android:id="@+id/fcvalores"
                         android:layout_width="129dp"
                         android:layout_height="wrap_content"
-                        android:background="#FFEB3B"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/primary_Dark"
                         android:ems="10"
                         android:hint="VALOR"
                         android:inputType="number"
                         android:textAlignment="center"
-                        android:textSize="24sp"
+                        android:textColor="#DFDADA"
+                        android:textColorHint="#DFDADA"
+                        android:textSize="20sp"
                         tools:ignore="TouchTargetSizeCheck" />
 
                     <EditText
                         android:id="@+id/fcmarcas"
                         android:layout_width="138dp"
                         android:layout_height="wrap_content"
-                        android:background="#FFEB3B"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@color/primary_Dark"
                         android:ems="10"
                         android:hint="MARCA"
                         android:inputType="textPersonName"
                         android:textAlignment="center"
-                        android:textSize="24sp"
+                        android:textColor="#DFDADA"
+                        android:textColorHint="#DFDADA"
+                        android:textSize="20sp"
                         tools:ignore="TouchTargetSizeCheck" />
 
                     <EditText
                         android:id="@+id/fcmodelos"
                         android:layout_width="128dp"
                         android:layout_height="wrap_content"
-                        android:background="#FFEB3B"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="1dp"
+                        android:background="@color/primary_Dark"
                         android:ems="10"
                         android:hint="MODELO"
                         android:inputType="number"
                         android:textAlignment="center"
-                        android:textSize="24sp"
+                        android:textColor="#DFDADA"
+                        android:textColorHint="#DFDADA"
+                        android:textSize="20sp"
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
@@ -182,9 +207,11 @@
 
                 <CheckBox
                     android:id="@+id/activo"
-                    android:layout_width="312dp"
+                    android:layout_width="377dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
                     android:checked="false"
                     android:enabled="false"
                     android:text="Vehiculo activo"
@@ -193,6 +220,7 @@
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
@@ -203,7 +231,8 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="15dp">
+                        android:layout_marginTop="15dp"
+                        android:background="#F3EFEF">
 
                         <Button
                             android:id="@+id/btnguardar"
@@ -211,9 +240,11 @@
                             android:layout_height="match_parent"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
+                            android:backgroundTint="@color/Botones"
                             android:onClick="Guardarfac"
                             android:text="GUARDAR"
-                            android:textSize="16sp"
+                            android:textColor="#DFDADA"
+                            android:textSize="18sp"
                             app:cornerRadius="15dp" />
 
                         <Button
@@ -221,10 +252,12 @@
                             android:layout_width="194dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:backgroundTint="@color/Botones"
                             android:onClick="Consultarfac"
                             android:text="CONSULTAR"
-                            android:textSize="16sp"
-                            app:cornerRadius="15dp" />
+                            android:textColor="#DFDADA"
+                            android:textSize="18sp"
+                            app:cornerRadius="20dp" />
 
                     </TableRow>
 
@@ -232,6 +265,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="15dp"
+                        android:background="#F3EFEF"
                         android:textAlignment="center">
 
                         <Button
@@ -240,9 +274,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
+                            android:backgroundTint="@color/Boton_anular"
                             android:onClick="AnularFv"
                             android:text="ANULAR"
-                            android:textSize="16sp"
+                            android:textColor="#DFDADA"
+                            android:textSize="18sp"
                             app:cornerRadius="15dp" />
 
                         <Button
@@ -250,9 +286,11 @@
                             android:layout_width="111dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:backgroundTint="@color/Botones"
                             android:onClick="Cancelar"
                             android:text="CANCELAR"
-                            android:textSize="16sp"
+                            android:textColor="#DFDADA"
+                            android:textSize="18sp"
                             app:cornerRadius="15dp" />
                     </TableRow>
 
@@ -260,18 +298,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="15dp"
+                        android:background="#F3EFEF"
                         android:textAlignment="center">
 
                         <Button
                             android:id="@+id/btnregresar"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_marginRight="50dp"
+                            android:layout_marginEnd="70dp"
                             android:layout_span="2"
+                            android:backgroundTint="@color/Botones"
                             android:baselineAligned="false"
                             android:onClick="Regresar"
                             android:text="REGRESAR"
-                            android:textSize="16sp"
+                            android:textColor="#DFDADA"
+                            android:textSize="20sp"
                             app:cornerRadius="15dp" />
                     </TableRow>
 

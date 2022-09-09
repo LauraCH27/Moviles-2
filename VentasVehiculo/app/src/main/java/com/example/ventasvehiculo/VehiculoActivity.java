@@ -26,7 +26,7 @@ public class VehiculoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehiculo);
     //Ocultar titulo por defeccto y asociar objetos Java con Xml
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         jetplaca=findViewById(R.id.etplaca);
         jetmarca=findViewById(R.id.etmarca);
         jetmodelo=findViewById(R.id.etmodelo);
